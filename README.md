@@ -16,3 +16,11 @@ OPTIONS:
   --header                是否仅处理头文件
   -h, --help              Show help information.
 ```
+* 例如某些头文件依赖了 `UIButton`,需要补齐
+```shell
+fix-import --src xxx --import "<UIKit/UIButton.h>" --symbol-pattern "UIButton" --header
+```
+* 再例如实现文件依赖了某些文件,需要补齐
+```shell
+fix-import --src xxx --import "<QMUIKit/QMUIButton.h>" --symbol-pattern "\s[QMUIButton|QMUIButtonImagePosition"
+```
